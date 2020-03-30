@@ -1,0 +1,7 @@
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\bin\Debug\Paralepipedo.exe.config
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\bin\Debug\Paralepipedo.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\bin\Debug\Paralepipedo.pdb
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\obj\Debug\Paralepipedo.csprojAssemblyReference.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\obj\Debug\Paralepipedo.csproj.CoreCompileInputs.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\obj\Debug\Paralepipedo.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Paralepipedo\Paralepipedo\obj\Debug\Paralepipedo.pdb

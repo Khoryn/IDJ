@@ -1,0 +1,7 @@
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\bin\Debug\Retangulo.exe.config
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\bin\Debug\Retangulo.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\bin\Debug\Retangulo.pdb
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\obj\Debug\Retangulo.csprojAssemblyReference.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\obj\Debug\Retangulo.csproj.CoreCompileInputs.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\obj\Debug\Retangulo.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\Retangulo\Retangulo\obj\Debug\Retangulo.pdb

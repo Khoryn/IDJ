@@ -1,0 +1,7 @@
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\bin\Debug\AlunoISMAI.exe.config
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\bin\Debug\AlunoISMAI.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\bin\Debug\AlunoISMAI.pdb
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\obj\Debug\AlunoISMAI.csprojAssemblyReference.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\obj\Debug\AlunoISMAI.csproj.CoreCompileInputs.cache
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\obj\Debug\AlunoISMAI.exe
+C:\Users\bmcka\Desktop\Exercicios_IDJ\AlunoISMAI\AlunoISMAI\obj\Debug\AlunoISMAI.pdb
