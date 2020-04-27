@@ -30,7 +30,7 @@ namespace M1
 
             foreach (Item item in items)
             {
-                Console.WriteLine($"Name: {item.Name}\n Description: {item.Description}\n Type: {item.Type}\n Durability: {item.Durability}\n Stats: {item.statistics.Keys} \n");
+                Console.WriteLine($"Name: {item.Name}\n Description: {item.Description}\n Type: {item.Type}\n Durability: {item.Durability}\n Stats: \n Intellect: {item.statistics[Item.Stat.Intellect.ToString()]} \n Agility: {item.statistics[Item.Stat.Agility.ToString()]} \n Strengh: {item.statistics[Item.Stat.Strengh.ToString()]} \n Stamina: {item.statistics[Item.Stat.Stamina.ToString()]} \n");
             }
         }
     }
