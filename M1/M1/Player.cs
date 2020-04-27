@@ -8,6 +8,6 @@ namespace M1
 {
     class Player : Inventory
     {
-
+        
     }
 }

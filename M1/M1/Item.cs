@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M1
 {
-    class Item
+    public class Item
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -15,9 +15,9 @@ namespace M1
         public ItemType Type { get; set; }
         public enum Stat { Intellect, Agility, Strengh, Stamina }
 
-        public Dictionary<string, int> statistics = new Dictionary<string, int>();
+        public Dictionary<Stat, int> statistics = new Dictionary<Stat, int>();
 
-        public Item(string name, string description, ItemType type, int durability, Dictionary<string, int> stats)
+        public Item(string name, string description, ItemType type, int durability, Dictionary<Stat, int> stats)
         {
             this.Name = name;
             this.Description = description;
