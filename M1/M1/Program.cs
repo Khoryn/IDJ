@@ -10,9 +10,10 @@ namespace M1
     {
         static void Main(string[] args)
         {
+            ItemDatabase database = new ItemDatabase();
             Inventory inventory = new Inventory();
 
-            inventory.AddItem();
+            database.BuildDatabase();
 
             Console.ReadKey();
         }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemDatabase.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
