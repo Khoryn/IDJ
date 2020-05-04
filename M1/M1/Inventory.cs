@@ -17,14 +17,15 @@ namespace M1
             Console.WriteLine($"Added item : {item.Name}");
         }
 
-        public Item CheckForItemById(int id)
-        {
-            return inventory.Find(item => item.Id == id);
-        }
-
         public void RemoveItemById(int id)
         {
+            Item item = GetItemById(id);
 
+            if (item != null)
+            {
+                inventory.Remove(item);
+                Console.WriteLine($"Removed : {item.Name}");
+            }
         }
     }
 }
