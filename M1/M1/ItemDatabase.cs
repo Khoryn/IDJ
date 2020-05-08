@@ -12,7 +12,7 @@ namespace M1
 
         public void BuildDatabase()
         {
-            items.Add(new Item("Arcane Vest", "Worn by Archmage Khadgar during the second war.", 10, 75, new Dictionary<Stat, int>
+            items.Add(new Armor("Arcane Vest", "Worn by Archmage Khadgar during the second war.", 10, 75, 200, ItemSlot.Chest, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 20},
                 {Stat.Agility, 0},
@@ -20,16 +20,13 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-            items.Add(new Item("Bloodsworn gloves", "Their color resembles the sands of Silithus.", 25, 100, new Dictionary<Stat, int>
+            items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100 ,ItemSlot.MainHand, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},
                 {Stat.Strengh, 60},
                 {Stat.Stamina, 60}
             }));
-
-            items.Add(new Weapon());
-            items.Add(new Armor());
 
             foreach (Item item in items)
             {

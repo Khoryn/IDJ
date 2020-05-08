@@ -12,10 +12,15 @@ namespace M1
         public enum WeaponType { Sword, Axe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weapon { get; set; }
 
-        public Weapon()
+        public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, Dictionary<Stat, int> stats)
         {
-            Name = "Ashkandi, Greatsword of the Brotherhood";
-            weapon = WeaponType.Sword;
+            this.Name = name;
+            this.Description = description;
+            this.Level = level;
+            this.Durability = durability;
+            this.Damage = damage;
+            this.Slot = itemSlot;
+            this.Stats = stats;
         }
     }
 }
