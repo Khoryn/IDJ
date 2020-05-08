@@ -8,12 +8,14 @@ namespace M1
 {
     class Weapon : Item
     {
-        public enum WeaponType { Cloth, Leather, Mail, Plate }
+        public int Damage { get; set; }
+        public enum WeaponType { Sword, Axe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weapon { get; set; }
 
         public Weapon()
         {
             Name = "Ashkandi, Greatsword of the Brotherhood";
+            weapon = WeaponType.Sword;
         }
     }
 }

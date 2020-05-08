@@ -8,6 +8,8 @@ namespace M1
 {
     public class Item
     {
+        public static int idCounter = 0;
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -18,16 +20,21 @@ namespace M1
 
         public Dictionary<Stat, int> Stats = new Dictionary<Stat, int>();
 
-        public Item(int id, string name, string description, int level, int durability, Dictionary<Stat, int> stats)
+        public enum ItemSlot { MainHand, OffHand, Head, Neck, Shoulders, Back, Chest, Waist, Legs, Feet, Wrist, Hand, Finger, Trinket }
+        public ItemSlot slot;
+
+        public Item(string name, string description, int level, int durability, Dictionary<Stat, int> stats, ItemSlot itemSlot)
         {
-            this.Id = id;
+            this.Id = System.Threading.Interlocked.Increment(ref idCounter);
             this.Name = name;
             this.Description = description;
             this.Durability = durability;
             this.Level = level;
             this.Stats = stats;
+            this.slot = itemSlot;
         }
 
+        // Default status for items
         public Item()
         {
             this.Id = 0;
@@ -42,6 +49,7 @@ namespace M1
                 {Stat.Strengh, 0},
                 {Stat.Stamina, 0}
             };
+            this.slot = ItemSlot.Chest;
         }
     }
 }
