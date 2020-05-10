@@ -71,7 +71,7 @@ namespace M1
                 if (inventory.Exists(x => (x.Id == id)))
                 {
                     inventory.Remove(item);
-                    Console.WriteLine($"Removed {item.Name} from the inventory");
+                    Console.WriteLine($"Removed {item.Name} from the inventory \n");
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace M1
                 if (inventory.Exists(x => (x.Name == name)))
                 {
                     inventory.Remove(item);
-                    Console.WriteLine($"Removed {item.Name} from the inventory");
+                    Console.WriteLine($"Removed {item.Name} from the inventory \n");
                 }
                 else
                 {
