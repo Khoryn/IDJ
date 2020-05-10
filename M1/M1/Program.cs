@@ -12,13 +12,12 @@ namespace M1
         {
             Inventory inventory = new Inventory();
 
-            for (int i = 0; i < 11; i++)
-            {
-                //inventory.AddItemById(1);
-                inventory.AddItemByÑame("Arcane Vest");
-                inventory.RemoveItemById(2);
-            }
+            inventory.AddItemById(2);
+            inventory.AddItemByÑame("Arcane Vest");
+            inventory.RemoveItemById(2);
 
+            inventory.SearchItemById(1);
+            inventory.SearchItemById(2);
             Console.ReadKey();
         }
     }

@@ -21,7 +21,7 @@ namespace M1
         {
             if (inventory.Count < maximumSlots)
             {
-                if (Database().Exists(item => (item.Id == id)))
+                if (Database().Exists(item => item.Id == id))
                 {
                     Item item = GetItemById(id);
                     inventory.Add(item);
@@ -98,6 +98,34 @@ namespace M1
             else
             {
                 Console.WriteLine("The inventory is empty!");
+            }
+        }
+
+        public void SearchItemById(int id)
+        {
+            if (inventory.Exists(item => item.Id == id))
+            {
+                Item item = GetItemById(id);
+
+                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Description: {item.Description}\n Level: {item.Level} \n Durability: {item.Durability}\n Stats \n Intellect: {item.Stats[Stat.Intellect]} \n Agility: {item.Stats[Stat.Agility]} \n Strengh: {item.Stats[Stat.Strengh]} \n Stamina: {item.Stats[Stat.Stamina]} \n");
+            }
+            else
+            {
+                Console.WriteLine("Couldn't find the item");
+            }
+        }
+
+        public void SearchItemByName(string name)
+        {
+            if (inventory.Exists(item => item.Name == name))
+            {
+                Item item = GetItemByName(name);
+
+                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Description: {item.Description}\n Level: {item.Level} \n Durability: {item.Durability}\n Stats \n Intellect: {item.Stats[Stat.Intellect]} \n Agility: {item.Stats[Stat.Agility]} \n Strengh: {item.Stats[Stat.Strengh]} \n Stamina: {item.Stats[Stat.Stamina]} \n");
+            }
+            else
+            {
+                Console.WriteLine("Couldn't find the item");
             }
         }
     }

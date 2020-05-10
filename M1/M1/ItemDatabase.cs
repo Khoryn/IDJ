@@ -27,11 +27,6 @@ namespace M1
                 {Stat.Strengh, 60},
                 {Stat.Stamina, 60}
             }));
-
-            foreach (Item item in items)
-            {
-                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Description: {item.Description}\n Level: {item.Level} \n Durability: {item.Durability}\n Stats \n Intellect: {item.Stats[Stat.Intellect]} \n Agility: {item.Stats[Stat.Agility]} \n Strengh: {item.Stats[Stat.Strengh]} \n Stamina: {item.Stats[Stat.Stamina]} \n");
-            }
         }
 
         public List<Item> Database()
