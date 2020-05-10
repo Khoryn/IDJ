@@ -10,17 +10,19 @@ namespace M1
     {
         public int Defense { get; set; }
         public enum ArmorType { Plate, Mail, Leather, Cloth }
-        public ArmorType armor { get; set; }
+        public ArmorType armorType { get; set; }
 
-        public Armor(string name, string description, int level, int durability, int defense, ItemSlot itemSlot, Dictionary<Stat, int> stats)
+        public Armor(string name, string description, int level, int durability, int defense, ItemSlot itemSlot, ArmorType type , Dictionary<Stat, int> stats)
         {
-            this.Name = name;
-            this.Description = description;
-            this.Level = level;
-            this.Durability = durability;
-            this.Defense = defense;
-            this.Slot = itemSlot;
-            this.Stats = stats;
+            Id = System.Threading.Interlocked.Increment(ref idCounter);
+            Name = name;
+            Description = description;
+            Level = level;
+            Durability = durability;
+            Defense = defense;
+            Slot = itemSlot;
+            armorType = type;
+            Stats = stats;
         }
     }
 }

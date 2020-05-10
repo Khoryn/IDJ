@@ -8,14 +8,15 @@ namespace M1
 {
     class Player : Inventory
     {
-        // Set players armor and weapon type
+        public enum PlayerArmorType { Plate, Mail, Leather, Cloth }
+        public PlayerArmorType playerArmor { get; set; }
 
         public void EquipWeapon()
         {
             // Equip if weapon type matches
         }
 
-        public void EquipArmor()
+        public void EquipArmor() 
         {
             // Equip if armor type matches
         }

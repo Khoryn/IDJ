@@ -10,17 +10,19 @@ namespace M1
     {
         public int Damage { get; set; }
         public enum WeaponType { Sword, Axe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
-        public WeaponType weapon { get; set; }
+        public WeaponType weaponType { get; set; }
 
-        public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, Dictionary<Stat, int> stats)
+        public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, WeaponType type ,Dictionary<Stat, int> stats)
         {
-            this.Name = name;
-            this.Description = description;
-            this.Level = level;
-            this.Durability = durability;
-            this.Damage = damage;
-            this.Slot = itemSlot;
-            this.Stats = stats;
+            Id = System.Threading.Interlocked.Increment(ref idCounter);
+            Name = name;
+            Description = description;
+            Level = level;
+            Durability = durability;
+            Damage = damage;
+            Slot = itemSlot;
+            weaponType = type;
+            Stats = stats;
         }
     }
 }

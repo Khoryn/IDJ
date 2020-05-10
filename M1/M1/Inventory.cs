@@ -8,13 +8,27 @@ namespace M1
 {
     class Inventory : ItemDatabase
     {
+        private const int maximumSlots = 10;
+
         public List<Item> inventory = new List<Item>();
 
-        public void AddItem(int id) 
+        public Inventory()
         {
-            Item item = GetItemById(id);
-            inventory.Add(item);
-            Console.WriteLine($"Added item : {item.Name}");
+            BuildDatabase();
+        }
+
+        public void AddItem(int id)
+        {
+            if (Database().Exists(item => (item.Id == id)))
+            {
+                Item item = GetItemById(id);
+                inventory.Add(item);
+                Console.WriteLine($"Added item to inventory : {item.Name}");
+            }
+            else
+            {
+                Console.WriteLine("Couldn't find item");
+            }
         }
 
         public void RemoveItemById(int id)
@@ -24,7 +38,7 @@ namespace M1
             if (item != null)
             {
                 inventory.Remove(item);
-                Console.WriteLine($"Removed : {item.Name}");
+                Console.WriteLine($"Removed item from inventory: {item.Name}");
             }
         }
     }
