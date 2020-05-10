@@ -14,10 +14,9 @@ namespace M1
 
             inventory.AddItemById(2);
             inventory.AddItemByÑame("Arcane Vest");
-            inventory.RemoveItemById(2);
 
-            inventory.SearchItemById(1);
             inventory.SearchItemById(2);
+            inventory.SearchItemByName("Arcane Vest");
             Console.ReadKey();
         }
     }

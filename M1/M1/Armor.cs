@@ -12,7 +12,7 @@ namespace M1
         public enum ArmorType { Plate, Mail, Leather, Cloth }
         public ArmorType armorType { get; set; }
 
-        public Armor(string name, string description, int level, int durability, int defense, ItemSlot itemSlot, ArmorType type , Dictionary<Stat, int> stats)
+        public Armor(string name, string description, int level, int durability, int defense, ItemSlot itemSlot, ArmorType type, Dictionary<Stat, int> stats)
         {
             Id = System.Threading.Interlocked.Increment(ref idCounter);
             Name = name;

@@ -17,6 +17,8 @@ namespace M1
             BuildDatabase();
         }
 
+        #region Add Items
+       
         public void AddItemById(int id)
         {
             if (inventory.Count < maximumSlots)
@@ -25,7 +27,7 @@ namespace M1
                 {
                     Item item = GetItemById(id);
                     inventory.Add(item);
-                    Console.WriteLine($"Added {item.Name} to the inventory");
+                    Console.WriteLine($"Added {item.Name} to the inventory \n");
                 }
                 else
                 {
@@ -46,7 +48,7 @@ namespace M1
                 {
                     Item item = GetItemByName(name);
                     inventory.Add(item);
-                    Console.WriteLine($"Added {item.Name} to the inventory");
+                    Console.WriteLine($"Added {item.Name} to the inventory \n");
                 }
                 else
                 {
@@ -58,7 +60,9 @@ namespace M1
                 Console.WriteLine("The inventory is full!");
             }
         }
+        #endregion
 
+        #region Remove items
         public void RemoveItemById(int id)
         {
             Item item = GetItemById(id);
@@ -100,14 +104,35 @@ namespace M1
                 Console.WriteLine("The inventory is empty!");
             }
         }
+        #endregion
 
+        #region Search items
         public void SearchItemById(int id)
         {
             if (inventory.Exists(item => item.Id == id))
             {
                 Item item = GetItemById(id);
 
-                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Description: {item.Description}\n Level: {item.Level} \n Durability: {item.Durability}\n Stats \n Intellect: {item.Stats[Stat.Intellect]} \n Agility: {item.Stats[Stat.Agility]} \n Strengh: {item.Stats[Stat.Strengh]} \n Stamina: {item.Stats[Stat.Stamina]} \n");
+                if (item is Weapon)
+                {
+                    Weapon weapon = (Weapon)item;
+
+                    Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
+                        $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
+                        $"Slot: {weapon.Slot} \n Type: {weapon.weaponType} \n " +
+                        $"Stats \n Intellect: {weapon.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {weapon.Stats[Stat.Agility]} \n Strengh: {weapon.Stats[Stat.Strengh]} \n Stamina: {weapon.Stats[Stat.Stamina]} \n");
+                }
+                else if (item is Armor)
+                {
+                    Armor armor = (Armor)item;
+
+                    Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
+                        $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +
+                        $"Slot: {armor.Slot} \n Type: {armor.armorType} \n " +
+                        $"Stats \n Intellect: {armor.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {armor.Stats[Stat.Agility]} \n Strengh: {armor.Stats[Stat.Strengh]} \n Stamina: {armor.Stats[Stat.Stamina]} \n");
+                }
             }
             else
             {
@@ -121,12 +146,32 @@ namespace M1
             {
                 Item item = GetItemByName(name);
 
-                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Description: {item.Description}\n Level: {item.Level} \n Durability: {item.Durability}\n Stats \n Intellect: {item.Stats[Stat.Intellect]} \n Agility: {item.Stats[Stat.Agility]} \n Strengh: {item.Stats[Stat.Strengh]} \n Stamina: {item.Stats[Stat.Stamina]} \n");
+                if (item is Weapon)
+                {
+                    Weapon weapon = (Weapon)item;
+
+                    Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
+                        $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
+                        $"Slot: {weapon.Slot} \n Type: {weapon.weaponType} \n " +
+                        $"Stats \n Intellect: {weapon.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {weapon.Stats[Stat.Agility]} \n Strengh: {weapon.Stats[Stat.Strengh]} \n Stamina: {weapon.Stats[Stat.Stamina]} \n");
+                }
+                else if (item is Armor)
+                {
+                    Armor armor = (Armor)item;
+
+                    Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
+                        $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +
+                        $"Slot: {armor.Slot} \n Type: {armor.armorType} \n " +
+                        $"Stats \n Intellect: {armor.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {armor.Stats[Stat.Agility]} \n Strengh: {armor.Stats[Stat.Strengh]} \n Stamina: {armor.Stats[Stat.Stamina]} \n");
+                }
             }
             else
             {
                 Console.WriteLine("Couldn't find the item");
             }
         }
+        #endregion
     }
 }

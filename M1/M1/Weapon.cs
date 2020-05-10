@@ -12,7 +12,7 @@ namespace M1
         public enum WeaponType { Sword, Axe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weaponType { get; set; }
 
-        public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, WeaponType type ,Dictionary<Stat, int> stats)
+        public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, WeaponType type, Dictionary<Stat, int> stats)
         {
             Id = System.Threading.Interlocked.Increment(ref idCounter);
             Name = name;
