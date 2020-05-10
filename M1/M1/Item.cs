@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M1
 {
-    public abstract class Item
+    public class Item
     {
         public static int idCounter = 0;
 

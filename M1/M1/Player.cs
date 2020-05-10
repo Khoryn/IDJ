@@ -11,6 +11,8 @@ namespace M1
         public enum PlayerArmorType { Plate, Mail, Leather, Cloth }
         public PlayerArmorType playerArmor { get; set; }
 
+        // Create dictionary for equipping items/ Dictionary<Slot, Item> ?? 
+
         public void EquipWeapon()
         {
             // Equip if weapon type matches

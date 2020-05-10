@@ -14,10 +14,10 @@ namespace M1
 
             for (int i = 0; i < 11; i++)
             {
-                inventory.AddItem(1);
+                //inventory.AddItemById(1);
+                inventory.AddItemByÑame("Arcane Vest");
+                inventory.RemoveItemById(2);
             }
-          
-       
 
             Console.ReadKey();
         }

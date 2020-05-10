@@ -20,7 +20,6 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-
             items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100, ItemSlot.MainHand, Weapon.WeaponType.Polearm, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},

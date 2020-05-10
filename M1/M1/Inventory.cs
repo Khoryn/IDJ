@@ -17,7 +17,7 @@ namespace M1
             BuildDatabase();
         }
 
-        public void AddItem(int id)
+        public void AddItemById(int id)
         {
             if (inventory.Count < maximumSlots)
             {
@@ -25,7 +25,7 @@ namespace M1
                 {
                     Item item = GetItemById(id);
                     inventory.Add(item);
-                    Console.WriteLine($"Added item to inventory : {item.Name}");
+                    Console.WriteLine($"Added {item.Name} to the inventory");
                 }
                 else
                 {
@@ -34,18 +34,70 @@ namespace M1
             }
             else
             {
-                Console.WriteLine("The inventory is full");
+                Console.WriteLine("The inventory is full!");
             }
         }
 
-        public void RemoveItem(int id)
+        public void AddItemByÑame(string name)
+        {
+            if (inventory.Count < maximumSlots)
+            {
+                if (Database().Exists(item => (item.Name == name)))
+                {
+                    Item item = GetItemByName(name);
+                    inventory.Add(item);
+                    Console.WriteLine($"Added {item.Name} to the inventory");
+                }
+                else
+                {
+                    Console.WriteLine("Couldn't find item");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The inventory is full!");
+            }
+        }
+
+        public void RemoveItemById(int id)
         {
             Item item = GetItemById(id);
-
-            if (item != null)
+            if (inventory.Count > 0)
             {
-                inventory.Remove(item);
-                Console.WriteLine($"Removed item from inventory: {item.Name}");
+                if (inventory.Exists(x => (x.Id == id)))
+                {
+                    inventory.Remove(item);
+                    Console.WriteLine($"Removed {item.Name} from the inventory");
+                }
+                else
+                {
+                    Console.WriteLine("Couldn't find the item");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The inventory is empty!");
+            }         
+        }
+
+        public void RemoveItemByName(string name)
+        {
+            Item item = GetItemByName(name);
+            if (inventory.Count > 0)
+            {
+                if (inventory.Exists(x => (x.Name == name)))
+                {
+                    inventory.Remove(item);
+                    Console.WriteLine($"Removed {item.Name} from the inventory");
+                }
+                else
+                {
+                    Console.WriteLine("Couldn't find the item");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The inventory is empty!");
             }
         }
     }
