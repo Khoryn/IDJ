@@ -8,19 +8,42 @@ namespace M1
 {
     class Player : Inventory
     {
-        public enum PlayerArmorType { Plate, Mail, Leather, Cloth }
-        public PlayerArmorType playerArmor { get; set; }
-
-        // Create dictionary for equipping items/ Dictionary<Slot, Item> ?? 
-
-        public void EquipWeapon()
+        public Player()
         {
-            // Equip if weapon type matches
+            Inventory inventory = new Inventory();
         }
 
-        public void EquipArmor() 
+        public Item currentWeapon;
+
+        public void EquipWeapon(int id)
         {
-            // Equip if armor type matches
+            Item item = GetItemById(id);
+
+            if (item is Weapon)
+            {
+                Weapon weapon = (Weapon)item;
+
+                if (item != null)
+                {
+                    currentWeapon = weapon;
+                    Console.WriteLine($"Equipped: {currentWeapon.Name}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Can't equip this item!");
+            }
+        }
+
+        public void EquipArmor(int id)
+        {
+            Item item = GetItemById(id);
+            Armor armor = (Armor)item;
+
+            if (true)
+            {
+
+            }
         }
     }
 }

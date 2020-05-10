@@ -10,16 +10,18 @@ namespace M1
     {
         static void Main(string[] args)
         {
-            Inventory inventory = new Inventory();
+            Player player = new Player();
 
-            inventory.AddItemById(2);
-            inventory.AddItemByÑame("Arcane Vest");
-            inventory.AddItemByÑame("Arcane Vest");
+            player.AddItemById(2);
+            player.AddItemByÑame("Arcane Vest");
+            player.AddItemByÑame("Arcane Vest");
 
-            inventory.RemoveItemById(1);
+            player.RemoveItemById(1);
 
-            inventory.SearchItemById(1);
-            inventory.SearchItemById(2);
+            player.SearchItemById(1);
+            player.SearchItemById(2);
+
+            player.EquipWeapon(1);
 
             Console.ReadKey();
         }
