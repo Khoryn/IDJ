@@ -19,19 +19,26 @@ namespace M1
 
         public void AddItem(int id)
         {
-            if (Database().Exists(item => (item.Id == id)))
+            if (inventory.Count < maximumSlots)
             {
-                Item item = GetItemById(id);
-                inventory.Add(item);
-                Console.WriteLine($"Added item to inventory : {item.Name}");
+                if (Database().Exists(item => (item.Id == id)))
+                {
+                    Item item = GetItemById(id);
+                    inventory.Add(item);
+                    Console.WriteLine($"Added item to inventory : {item.Name}");
+                }
+                else
+                {
+                    Console.WriteLine("Couldn't find item");
+                }
             }
             else
             {
-                Console.WriteLine("Couldn't find item");
+                Console.WriteLine("The inventory is full");
             }
         }
 
-        public void RemoveItemById(int id)
+        public void RemoveItem(int id)
         {
             Item item = GetItemById(id);
 

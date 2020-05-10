@@ -12,7 +12,12 @@ namespace M1
         {
             Inventory inventory = new Inventory();
 
-            inventory.AddItem(1);
+            for (int i = 0; i < 11; i++)
+            {
+                inventory.AddItem(1);
+            }
+          
+       
 
             Console.ReadKey();
         }
