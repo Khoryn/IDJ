@@ -16,8 +16,6 @@ namespace M1
         public string Name { get; set; }
         public string Description { get; set; }
         public enum Stat { Intellect, Agility, Strengh, Stamina }
-        //public enum ItemSlot { MainHand, OffHand, Head, Neck, Shoulders, Back, Chest, Waist, Legs, Feet, Wrist, Hand, Finger, Trinket }
-        //public ItemSlot Slot { get; set; }
 
         public Dictionary<Stat, int> Stats = new Dictionary<Stat, int>();
 
@@ -29,7 +27,6 @@ namespace M1
             Description = "Default";
             Durability = 0;
             Level = 0;
-            //Slot = ItemSlot.Chest;
             Stats = new Dictionary<Item.Stat, int>
             {
                 {Stat.Intellect, 0},
