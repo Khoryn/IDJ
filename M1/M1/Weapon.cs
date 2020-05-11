@@ -12,7 +12,7 @@ namespace M1
         public enum WeaponType { Sword, TwoHandedSword, Axe, TwoHandedAxe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weaponType { get; set; }
 
-        public enum WeaponSlot { MainHand, Offhand };
+        public enum WeaponSlot { MainHand, OffHand };
         public WeaponSlot weaponSlot;
 
         /// <summary>Weapon constructor.

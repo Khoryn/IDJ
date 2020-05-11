@@ -8,7 +8,11 @@ namespace M1
 {
     class Player : Inventory
     {
+        public enum PlayerSlots { MainHand, OffHand, Head, Neck, Shoulders, Back, Chest, Waist, Legs, Feet, Wrist, Hand, Finger, Trinket }
+        public PlayerSlots slots { get; set; }
+
         private Item currentWeapon;
+        private Item currentArmor;
 
         public Player()
         {
@@ -18,7 +22,7 @@ namespace M1
         /// <summary>
         /// Equip the player with a weapon from the inventory through it's id.
         /// </summary>
-        public void EquipWeapon(int id)
+        public void EquipWeapon(int id, PlayerSlots slot)
         {
             Item item = GetItemById(id);
             if (item is Weapon)
@@ -30,8 +34,15 @@ namespace M1
                 {
                     if (currentWeapon == null)
                     {
-                        currentWeapon = weapon;
-                        Console.WriteLine($"Equipped: {currentWeapon.Name}!");
+                        if (weapon.weaponSlot.ToString() == slot.ToString())
+                        {
+                            currentWeapon = weapon;
+                            Console.WriteLine($"Equipped: {currentWeapon.Name}!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can't equip in this slot");
+                        }
                     }
                     else
                     {
@@ -42,7 +53,7 @@ namespace M1
                 }
                 else
                 {
-                    Console.WriteLine("Couldn't find the item");
+                    Console.WriteLine("Couldn't find the item in the inventory!");
                 }
             }
             else
@@ -54,14 +65,31 @@ namespace M1
         /// <summary>
         /// Equip the player with a piece of armor from the inventory through it's id.
         /// </summary>
-        public void EquipArmor(int id)
+        public void EquipArmor(int id, PlayerSlots slot)
         {
             Item item = GetItemById(id);
-            Armor armor = (Armor)item;
 
             if (item != null && inventory.Exists(i => i.Id == id))
             {
+                if (item is Armor)
+                {
+                    Armor armor = (Armor)item;
 
+                    if (armor.armorSlot.ToString() == slot.ToString())
+                    {
+                        currentArmor = armor;
+                        inventory.Remove(currentArmor);
+                        Console.WriteLine($"Equipped: {currentArmor.Name}!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Can't equip in this slot");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Couldn't find the item in the inventory!");
             }
         }
     }

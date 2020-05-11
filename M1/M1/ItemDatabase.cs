@@ -31,7 +31,7 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-            items.Add(new Weapon("Quel'Delar, Might of the Faithful", "The sister blade of Quel'Serrar.", 80, 100, 300, Weapon.WeaponSlot.MainHand, Weapon.WeaponType.Sword, new Dictionary<Stat, int>
+            items.Add(new Weapon("Quel'Delar, Might of the Faithful", "The sister blade of Quel'Serrar.", 80, 100, 300, Weapon.WeaponSlot.OffHand, Weapon.WeaponType.Sword, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},
