@@ -15,7 +15,7 @@ namespace M1
         /// </summary>
         public void BuildDatabase()
         {
-            items.Add(new Armor("Arcane Vest", "Worn by Archmage Khadgar during the second war.", 10, 75, 200, ItemSlot.Chest, Armor.ArmorType.Cloth, new Dictionary<Stat, int>
+            items.Add(new Armor("Arcane Vest", "Worn by Archmage Khadgar during the second war.", 10, 75, 200, Armor.ArmorSlot.Chest, Armor.ArmorType.Cloth, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 20},
                 {Stat.Agility, 0},
@@ -23,7 +23,7 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-            items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100, ItemSlot.MainHand, Weapon.WeaponType.TwoHandedSword, new Dictionary<Stat, int>
+            items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100, Weapon.WeaponSlot.MainHand, Weapon.WeaponType.TwoHandedSword, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},
@@ -31,7 +31,7 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-            items.Add(new Weapon("Quel'Delar, Might of the Faithful", "The sister blade of Quel'Serrar.", 25, 100, 300, ItemSlot.MainHand, Weapon.WeaponType.Sword, new Dictionary<Stat, int>
+            items.Add(new Weapon("Quel'Delar, Might of the Faithful", "The sister blade of Quel'Serrar.", 80, 100, 300, Weapon.WeaponSlot.MainHand, Weapon.WeaponType.Sword, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},

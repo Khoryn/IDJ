@@ -20,12 +20,13 @@ namespace M1
         /// </summary>
         public void EquipWeapon(int id)
         {
-            Item item = GetItemById(id); // Get the selected item by it's id
-            if (item is Weapon) 
+            Item item = GetItemById(id);
+            if (item is Weapon)
             {
                 Weapon weapon = (Weapon)item;
                 Weapon newWeapon = (Weapon)item;
-                if (item != null && inventory.Exists(x => x.Id == id))
+
+                if (item != null && inventory.Exists(i => i.Id == id))
                 {
                     if (currentWeapon == null)
                     {
@@ -58,7 +59,7 @@ namespace M1
             Item item = GetItemById(id);
             Armor armor = (Armor)item;
 
-            if (true)
+            if (item != null && inventory.Exists(i => i.Id == id))
             {
 
             }
