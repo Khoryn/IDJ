@@ -15,10 +15,13 @@ namespace M1
             Inventory inventory = new Inventory();
         }
 
+        /// <summary>
+        /// Equip the player with a weapon from the inventory through it's id.
+        /// </summary>
         public void EquipWeapon(int id)
         {
-            Item item = GetItemById(id);
-            if (item is Weapon)
+            Item item = GetItemById(id); // Get the selected item by it's id
+            if (item is Weapon) 
             {
                 Weapon weapon = (Weapon)item;
                 Weapon newWeapon = (Weapon)item;
@@ -27,7 +30,7 @@ namespace M1
                     if (currentWeapon == null)
                     {
                         currentWeapon = weapon;
-                        Console.WriteLine($"Equipped: {currentWeapon.Name}");
+                        Console.WriteLine($"Equipped: {currentWeapon.Name}!");
                     }
                     else
                     {
@@ -47,6 +50,9 @@ namespace M1
             }
         }
 
+        /// <summary>
+        /// Equip the player with a piece of armor from the inventory through it's id.
+        /// </summary>
         public void EquipArmor(int id)
         {
             Item item = GetItemById(id);

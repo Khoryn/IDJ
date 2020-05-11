@@ -18,15 +18,18 @@ namespace M1
         }
 
         #region Add Items
-       
+
+        /// <summary>
+        /// Adds an item to the inventory through it's id.
+        /// </summary>
         public void AddItemById(int id)
         {
-            if (inventory.Count < maximumSlots)
+            if (inventory.Count < maximumSlots) // Checks if the inventory isn't full
             {
-                if (Database().Exists(item => item.Id == id))
+                if (Database().Exists(item => item.Id == id)) // Check if the item exists inside the database
                 {
-                    Item item = GetItemById(id);
-                    inventory.Add(item);
+                    Item item = GetItemById(id); // Get the selected item by it's id
+                    inventory.Add(item); // Add the item to the inventory
                     Console.WriteLine($"Added {item.Name} to the inventory \n");
                 }
                 else
@@ -40,14 +43,17 @@ namespace M1
             }
         }
 
+        /// <summary>
+        /// Adds an item to the inventory through it's name.
+        /// </summary>
         public void AddItemByÑame(string name)
         {
-            if (inventory.Count < maximumSlots)
+            if (inventory.Count < maximumSlots) // Checks if the inventory isn't full
             {
-                if (Database().Exists(item => (item.Name == name)))
+                if (Database().Exists(item => (item.Name == name))) // Check if the item exists inside the database
                 {
-                    Item item = GetItemByName(name);
-                    inventory.Add(item);
+                    Item item = GetItemByName(name); // Get the selected item by it's name
+                    inventory.Add(item); // Add the item to the inventory
                     Console.WriteLine($"Added {item.Name} to the inventory \n");
                 }
                 else
@@ -64,14 +70,17 @@ namespace M1
 
         #region Remove items
 
+        /// <summary>
+        /// Removes an item from the inventory through it's id.
+        /// </summary>
         public void RemoveItemById(int id)
         {
-            Item item = GetItemById(id);
-            if (inventory.Count > 0)
+            Item item = GetItemById(id); // Get the selected item by it's id
+            if (inventory.Count > 0) // Checks if the inventory isn't empty
             {
-                if (inventory.Exists(x => (x.Id == id)))
+                if (inventory.Exists(x => (x.Id == id))) // Check if the item exists inside the inventory
                 {
-                    inventory.Remove(item);
+                    inventory.Remove(item); // Remove the item from the inventory
                     Console.WriteLine($"Removed {item.Name} from the inventory \n");
                 }
                 else
@@ -85,14 +94,17 @@ namespace M1
             }         
         }
 
+        /// <summary>
+        /// Removes an item from the inventory through it's name.
+        /// </summary>
         public void RemoveItemByName(string name)
         {
-            Item item = GetItemByName(name);
-            if (inventory.Count > 0)
+            Item item = GetItemByName(name); // Get the selected item by it's name
+            if (inventory.Count > 0) // Checks if the inventory isn't empty
             {
-                if (inventory.Exists(x => (x.Name == name)))
+                if (inventory.Exists(x => (x.Name == name))) // Check if the item exists inside the inventory
                 {
-                    inventory.Remove(item);
+                    inventory.Remove(item); // Remove the item from the inventory
                     Console.WriteLine($"Removed {item.Name} from the inventory \n");
                 }
                 else
@@ -109,15 +121,18 @@ namespace M1
 
         #region Search items
 
+        /// <summary>
+        /// Searches for an item inside the inventory that corresponds to the given id.
+        /// </summary>
         public void SearchItemById(int id)
         {
-            if (inventory.Exists(item => item.Id == id))
+            if (inventory.Exists(item => item.Id == id)) // Check if the item exists inside the inventory
             {
-                Item item = GetItemById(id);
+                Item item = GetItemById(id); // Get the selected item by it's id
 
                 if (item is Weapon)
                 {
-                    Weapon weapon = (Weapon)item;
+                    Weapon weapon = (Weapon)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
                         $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
@@ -127,7 +142,7 @@ namespace M1
                 }
                 else if (item is Armor)
                 {
-                    Armor armor = (Armor)item;
+                    Armor armor = (Armor)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
                         $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +
@@ -142,15 +157,18 @@ namespace M1
             }
         }
 
+        /// <summary>
+        /// Searches for an item inside the inventory that corresponds to the given name.
+        /// </summary>
         public void SearchItemByName(string name)
         {
-            if (inventory.Exists(item => item.Name == name))
+            if (inventory.Exists(item => item.Name == name)) // Check if the item exists inside the inventory
             {
-                Item item = GetItemByName(name);
+                Item item = GetItemByName(name); // Get the selected item by it's name
 
                 if (item is Weapon)
                 {
-                    Weapon weapon = (Weapon)item;
+                    Weapon weapon = (Weapon)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
                         $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
@@ -160,7 +178,7 @@ namespace M1
                 }
                 else if (item is Armor)
                 {
-                    Armor armor = (Armor)item;
+                    Armor armor = (Armor)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
                         $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +
@@ -175,15 +193,18 @@ namespace M1
             }
         }
 
+        /// <summary>
+        /// Lopp through the entire inventory in order to view all it's items.
+        /// </summary>
         public void ViewInventory()
         {
-            List<Item> sortedInventory = inventory.OrderBy(item => item.Id).ToList();
+            List<Item> sortedInventory = inventory.OrderBy(item => item.Id).ToList(); // Sort list by id
 
             foreach (Item item in sortedInventory)
             {
                 if (item is Weapon)
                 {
-                    Weapon weapon = (Weapon)item;
+                    Weapon weapon = (Weapon)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
                         $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
@@ -193,7 +214,7 @@ namespace M1
                 }
                 else if (item is Armor)
                 {
-                    Armor armor = (Armor)item;
+                    Armor armor = (Armor)item; // Downcast (turn the base class into a more specific class)
 
                     Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
                         $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +

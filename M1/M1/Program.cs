@@ -19,16 +19,14 @@ namespace M1
 
             player.RemoveItemById(1);
 
-            player.SearchItemById(1);
-            player.SearchItemById(2);
+            player.SearchItemById(3);
+            //player.SearchItemById(1);
 
             //player.ViewInventory();
 
             player.EquipWeapon(2);
             Console.ReadKey();
             player.EquipWeapon(3);
-            Console.ReadKey();
-            player.EquipWeapon(2);
 
             Console.ReadKey();
         }

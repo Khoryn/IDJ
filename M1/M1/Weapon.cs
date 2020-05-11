@@ -9,7 +9,7 @@ namespace M1
     class Weapon : Item
     {
         public int Damage { get; set; }
-        public enum WeaponType { Sword, Axe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
+        public enum WeaponType { Sword, TwoHandedSword, Axe, TwoHandedAxe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weaponType { get; set; }
 
         public Weapon(string name, string description, int level, int durability, int damage, ItemSlot itemSlot, WeaponType type, Dictionary<Stat, int> stats)

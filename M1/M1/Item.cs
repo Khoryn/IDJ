@@ -21,8 +21,6 @@ namespace M1
 
         public Dictionary<Stat, int> Stats = new Dictionary<Stat, int>();
 
-        
-
         // Default status for items
         public Item()
         {

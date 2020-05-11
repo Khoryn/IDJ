@@ -10,6 +10,9 @@ namespace M1
     {
         private List<Item> items = new List<Item>();
 
+        /// <summary>
+        /// Populate the database with various items(Weapons and armor).
+        /// </summary>
         public void BuildDatabase()
         {
             items.Add(new Armor("Arcane Vest", "Worn by Archmage Khadgar during the second war.", 10, 75, 200, ItemSlot.Chest, Armor.ArmorType.Cloth, new Dictionary<Stat, int>
@@ -20,7 +23,7 @@ namespace M1
                 {Stat.Stamina, 60}
             }));
 
-            items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100, ItemSlot.MainHand, Weapon.WeaponType.Sword, new Dictionary<Stat, int>
+            items.Add(new Weapon("Ashkandi, Greatsword of the Brotherhood", "This sword was wielded by Bronzebeard himself.", 25, 100, 100, ItemSlot.MainHand, Weapon.WeaponType.TwoHandedSword, new Dictionary<Stat, int>
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},
@@ -32,21 +35,30 @@ namespace M1
             {
                 {Stat.Intellect, 0},
                 {Stat.Agility, 30},
-                {Stat.Strengh, 60},
-                {Stat.Stamina, 60}
+                {Stat.Strengh, 80},
+                {Stat.Stamina, 100}
             }));
         }
 
+        /// <summary>
+        /// Returns the items list
+        /// </summary>
         public List<Item> Database()
         {
             return items;
         }
 
+        /// <summary>
+        /// Finds the item inside the database that corresponds to the given id.
+        /// </summary>
         public Item GetItemById(int id)
         {
             return items.Find(item => item.Id == id);
         }
 
+        /// <summary>
+        /// Finds the item inside the database that corresponds to the given name.
+        /// </summary>
         public Item GetItemByName(string name)
         {
             return items.Find(item => item.Name == name);
