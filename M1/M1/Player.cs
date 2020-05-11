@@ -8,12 +8,12 @@ namespace M1
 {
     class Player : Inventory
     {
+        private Item currentWeapon;
+
         public Player()
         {
             Inventory inventory = new Inventory();
         }
-
-        public Item currentWeapon;
 
         public void EquipWeapon(int id)
         {

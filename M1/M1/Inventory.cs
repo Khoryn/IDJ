@@ -172,6 +172,35 @@ namespace M1
                 Console.WriteLine("Couldn't find the item");
             }
         }
+
+        public void ViewInventory()
+        {
+            List<Item> sortedInventory = inventory.OrderBy(item => item.Id).ToList();
+
+            foreach (Item item in sortedInventory)
+            {
+                if (item is Weapon)
+                {
+                    Weapon weapon = (Weapon)item;
+
+                    Console.WriteLine($" ID: {weapon.Id}\n Name: {weapon.Name}\n Description: {weapon.Description}\n " +
+                        $"Level: {weapon.Level} \n Durability: {weapon.Durability} \n Damage : {weapon.Damage}\n " +
+                        $"Slot: {weapon.Slot} \n Type: {weapon.weaponType} \n " +
+                        $"Stats \n Intellect: {weapon.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {weapon.Stats[Stat.Agility]} \n Strengh: {weapon.Stats[Stat.Strengh]} \n Stamina: {weapon.Stats[Stat.Stamina]} \n");
+                }
+                else if (item is Armor)
+                {
+                    Armor armor = (Armor)item;
+
+                    Console.WriteLine($" ID: {armor.Id}\n Name: {armor.Name}\n Description: {armor.Description}\n " +
+                        $"Level: {armor.Level} \n Durability: {armor.Durability} \n Defense : {armor.Defense}\n " +
+                        $"Slot: {armor.Slot} \n Type: {armor.armorType} \n " +
+                        $"Stats \n Intellect: {armor.Stats[Stat.Intellect]} " +
+                        $"\n Agility: {armor.Stats[Stat.Agility]} \n Strengh: {armor.Stats[Stat.Strengh]} \n Stamina: {armor.Stats[Stat.Stamina]} \n");
+                }
+            }
+        }
         #endregion
     }
 }
