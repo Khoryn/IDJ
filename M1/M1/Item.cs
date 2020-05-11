@@ -21,16 +21,7 @@ namespace M1
 
         public Dictionary<Stat, int> Stats = new Dictionary<Stat, int>();
 
-        public Item(string name, string description, int level, int durability, ItemSlot itemSlot, Dictionary<Stat, int> stats)
-        {
-            Id = 0;
-            Name = name;
-            Description = description;
-            Durability = durability;
-            Level = level;
-            Slot = itemSlot;
-            Stats = stats;
-        }
+        
 
         // Default status for items
         public Item()

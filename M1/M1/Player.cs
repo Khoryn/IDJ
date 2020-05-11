@@ -18,15 +18,27 @@ namespace M1
         public void EquipWeapon(int id)
         {
             Item item = GetItemById(id);
-
             if (item is Weapon)
             {
                 Weapon weapon = (Weapon)item;
-
-                if (item != null)
+                Weapon newWeapon = (Weapon)item;
+                if (item != null && inventory.Exists(x => x.Id == id))
                 {
-                    currentWeapon = weapon;
-                    Console.WriteLine($"Equipped: {currentWeapon.Name}");
+                    if (currentWeapon == null)
+                    {
+                        currentWeapon = weapon;
+                        Console.WriteLine($"Equipped: {currentWeapon.Name}");
+                    }
+                    else
+                    {
+                        weapon = (Weapon)currentWeapon;
+                        currentWeapon = newWeapon;
+                        Console.WriteLine($"Uniquipped {weapon.Name} and equipped {currentWeapon.Name}!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Couldn't find the item");
                 }
             }
             else

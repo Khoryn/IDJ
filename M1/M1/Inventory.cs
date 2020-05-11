@@ -63,6 +63,7 @@ namespace M1
         #endregion
 
         #region Remove items
+
         public void RemoveItemById(int id)
         {
             Item item = GetItemById(id);
@@ -107,6 +108,7 @@ namespace M1
         #endregion
 
         #region Search items
+
         public void SearchItemById(int id)
         {
             if (inventory.Exists(item => item.Id == id))
