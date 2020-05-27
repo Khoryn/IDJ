@@ -11,7 +11,6 @@ namespace M1
         public int Damage { get; set; }
         public enum WeaponType { Sword, TwoHandedSword, Axe, TwoHandedAxe, Polearm, Dagger, Stave, Bow, Gun, Crossbow, Wand }
         public WeaponType weaponType { get; set; }
-
         public enum WeaponSlot { MainHand, OffHand };
         public WeaponSlot weaponSlot;
 

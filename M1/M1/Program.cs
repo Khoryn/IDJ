@@ -20,7 +20,6 @@ namespace M1
             player.RemoveItemById(1);
 
             //player.SearchItemById(3);
-            //player.SearchItemByName("Arcane Vest");
 
             //player.ViewInventory();
 
@@ -29,6 +28,7 @@ namespace M1
             player.EquipArmor(1, Player.PlayerSlots.Shoulders);
             player.EquipWeapon(3, Player.PlayerSlots.OffHand);
             player.EquipWeapon(2, Player.PlayerSlots.MainHand);
+            player.EquipWeapon(3, Player.PlayerSlots.OffHand);
 
             Console.ReadKey();
         }
