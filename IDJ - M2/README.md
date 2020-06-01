@@ -1,4 +1,4 @@
-<center><header>Inventory and Equipment System</header></center>
+<center><h1>Inventory and Equipment System</h1></center>
 
 Inventory Features:
 <br>•	Store various types of items in an inventory(weapons, armor, food, potions, miscellaneous, etc )
