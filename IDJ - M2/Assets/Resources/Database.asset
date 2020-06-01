@@ -10,6 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 849c2eb5a87d00347ab97a3bb20f92f0, type: 3}
-  m_Name: New Item Database
+  m_Name: Database
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 11400000, guid: 99d7b08142026e645a8a6e92ccd5bd5b, type: 2}
+  - {fileID: 11400000, guid: d89b682fb2cfbf54f9f788c09c26928e, type: 2}
+  - {fileID: 11400000, guid: 78b5605666ff425419b1212f5d26474c, type: 2}
+  - {fileID: 11400000, guid: 1bcf036af102fba409168af982ce9b12, type: 2}
+  - {fileID: 11400000, guid: 43ae506f9ea41ce4fab8b95bcedf4399, type: 2}

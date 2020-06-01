@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     private Vector3 mousePosition;
     public float moveSpeed = 2f;
 
+    private void Start()
+    {
+        inventory.Load();
+    }
+
     private void Update()
     {
         FollowMousePosition();
@@ -27,8 +32,8 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        inventory.Save();
         inventory.Container.Clear();
-        //inventory.Save();
     }
 
     private void FollowMousePosition()
