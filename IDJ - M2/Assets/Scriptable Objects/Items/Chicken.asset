@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f873df4628a1d4daf4c0adc1867272, type: 3}
-  m_Name: New Food Object
+  m_Name: Chicken
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2260437046106342152, guid: d90b51f87e9f92b41ad13c4ede738572,
+    type: 3}
   type: 0
   description: 

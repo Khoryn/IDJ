@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea9613202261e1a4ea8c41ab111c218a, type: 3}
-  m_Name: Weapon of the Damned
+  m_Script: {fileID: 11500000, guid: 16f873df4628a1d4daf4c0adc1867272, type: 3}
+  m_Name: Pork
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2260437046106342152, guid: d90b51f87e9f92b41ad13c4ede738572,
+  itemPrefab: {fileID: 2260437046106342152, guid: b8ae0918f08bf07468671d0ba0f11f5d,
     type: 3}
-  type: 2
-  description: Weapon
+  type: 0
+  description: 

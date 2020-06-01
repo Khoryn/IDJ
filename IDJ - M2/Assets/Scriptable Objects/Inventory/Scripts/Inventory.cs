@@ -23,6 +23,7 @@ public class Inventory : ScriptableObject
         if (!hasItem)
         {
             Container.Add(new InventorySlot(_item, _amount));
+            Debug.Log($"Added {_item.name} to the inventory");
         }
     }
 }

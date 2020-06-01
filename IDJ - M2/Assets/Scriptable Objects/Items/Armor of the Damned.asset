@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecbd5f0ec740044eb2cc820ce14623e, type: 3}
   m_Name: Armor of the Damned
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 6628810454364108685, guid: dd754ec239b1ed944a0c8dce7f7a3fc8,
+    type: 3}
   type: 3
   description: 
