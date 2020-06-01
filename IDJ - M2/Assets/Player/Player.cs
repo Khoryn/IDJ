@@ -25,10 +25,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Temporary -> for tests only
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
+        //inventory.Save();
     }
 
     private void FollowMousePosition()
