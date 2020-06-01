@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Armor.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Food.cs" />
+    <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Potion.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Weapon.cs" />

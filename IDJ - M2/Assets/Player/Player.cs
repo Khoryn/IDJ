@@ -6,16 +6,12 @@ public class Player : MonoBehaviour
 {
     public Inventory inventory;
     private Vector3 mousePosition;
-    public float moveSpeed = 0.1f;
+    public float moveSpeed = 2f;
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
-        }
+        FollowMousePosition();
+        File();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,5 +29,26 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
+    }
+
+    private void FollowMousePosition()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = transform.position.z;
+        transform.position = mousePosition;
+    }
+
+    private void File()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) // For testing purposes
+        {
+            inventory.Save();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return)) // For testing purposes
+        {
+            inventory.Load();
+        }
+
     }
 }

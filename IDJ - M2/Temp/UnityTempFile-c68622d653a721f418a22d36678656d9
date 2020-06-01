@@ -294,6 +294,7 @@ Assets\Player\Player.cs
 "Assets\Scriptable Objects\Inventory\Scripts\Inventory.cs"
 "Assets\Scriptable Objects\Items\Scripts\Armor.cs"
 "Assets\Scriptable Objects\Items\Scripts\Food.cs"
+"Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs"
 "Assets\Scriptable Objects\Items\Scripts\ItemObject.cs"
 "Assets\Scriptable Objects\Items\Scripts\Potion.cs"
 "Assets\Scriptable Objects\Items\Scripts\Weapon.cs"
