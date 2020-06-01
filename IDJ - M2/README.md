@@ -20,6 +20,6 @@ Equipment System features:
 Item features:
 <br>•	Multiple type of items(Weapons, Armor, Food, Potions, etc)
 <br>•	Different behaviours for items (potions and food are usable only once, whereas weapons and armor will remain in the inventory)
-<br>•	Items can have durability, bonuses, names, descriptions
+<br>•	Items can have durability, bonuses, names, descriptions, etc..
 <br>•	Stackable items (determine if the item is stackable, for example potions and food should be able to be stackable untill a pre determined amount)
 
