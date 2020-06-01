@@ -9,6 +9,7 @@ Inventory Features:
 <br>•	Toggle inventory (appears and disappears when a certain key is pressed)
 <br>•	Dynamic inventory size
 <br>•	The player can have multiple inventories (Player "bags", bank, mount bags, etc..)
+<br>•	Transfer items from one inventory to another(transfer items from the player's inventory to the bank)
 
 
 Equipment System features:
