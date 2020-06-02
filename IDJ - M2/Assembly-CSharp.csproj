@@ -63,9 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DisplayInventory.cs" />
-    <Compile Include="Assets\Item.cs" />
+    <Compile Include="Assets\PickableItem.cs" />
     <Compile Include="Assets\Player\Player.cs" />
-    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\InventoryObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Armor.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Food.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />

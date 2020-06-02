@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 483745183}
   - component: {fileID: 483745185}
   m_Layer: 0
-  m_Name: SceneTest
+  m_Name: SceneTestCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908603842}
   m_Layer: 0
-  m_Name: Tests
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,12 +1121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edfecbf316951b47a8dd5324d454f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 3721292937403180762, guid: c2234330700740e4eaa58460618708e8,
+    type: 3}
   inventory: {fileID: 11400000, guid: 8a7dd1d0e07b93a47ababb3839184c47, type: 2}
   X_SPACE_BETWEEN_ITEM: 110
   NUMBER_OF_COLUMNS: 4
   Y_SPACE_BETWEEN_ITEM: 110
-  X_START: -170
-  Y_START: 270
+  X_START: -175
+  Y_START: 275
 --- !u!114 &1274754495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,8 +1149,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4edbc5539b441f049966c07e2ba12186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1515,7 +1517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8a7dd1d0e07b93a47ababb3839184c47, type: 2}
-  moveSpeed: 0.1
 --- !u!212 &1812698618
 SpriteRenderer:
   m_ObjectHideFlags: 0

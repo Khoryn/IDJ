@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f873df4628a1d4daf4c0adc1867272, type: 3}
   m_Name: Pork
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2260437046106342152, guid: b8ae0918f08bf07468671d0ba0f11f5d,
-    type: 3}
+  id: 3
+  sprite: {fileID: 21300018, guid: 142ff8784e552734f9d6a895491d0ae8, type: 3}
   type: 0
   description: 

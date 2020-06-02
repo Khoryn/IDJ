@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9613202261e1a4ea8c41ab111c218a, type: 3}
   m_Name: Weapon of the Damned
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2260437046106342152, guid: d90b51f87e9f92b41ad13c4ede738572,
-    type: 3}
+  id: 0
+  sprite: {fileID: 21300000, guid: 719c2201c2f5f6c4aafffaeb5abdf5f9, type: 3}
   type: 2
   description: Weapon

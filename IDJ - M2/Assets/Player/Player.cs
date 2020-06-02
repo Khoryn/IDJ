@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Inventory inventory;
-    private Vector3 mousePosition;
-    public float moveSpeed = 2f;
+    public InventoryObject inventory;
 
-    private void Start()
+    private Vector3 mousePosition;
+    private float moveSpeed = 2f;
+
+    private void Awake()
     {
         inventory.Load();
     }
@@ -16,16 +17,15 @@ public class Player : MonoBehaviour
     private void Update()
     {
         FollowMousePosition();
-        File();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Item item = collision.GetComponent<Item>();
+        PickableItem item = collision.GetComponent<PickableItem>();
 
-        if (item) // add null verification
+        if (item)
         {
-            inventory.AddItem(item.item, 1);
+            inventory.AddItem(new Item(item.item), 1);
             Destroy(collision.gameObject);
         }
     }
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.Save();
-        inventory.Container.Clear();
+        inventory.container.items.Clear();
     }
 
     private void FollowMousePosition()
@@ -41,19 +41,5 @@ public class Player : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = transform.position.z;
         transform.position = mousePosition;
-    }
-
-    private void File()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) // For testing purposes
-        {
-            inventory.Save();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return)) // For testing purposes
-        {
-            inventory.Load();
-        }
-
     }
 }
