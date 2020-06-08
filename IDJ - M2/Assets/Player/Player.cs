@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.Save();
-        inventory.container.items.Clear();
+        inventory.container.items = new InventorySlot[24];
     }
 
     private void FollowMousePosition()
