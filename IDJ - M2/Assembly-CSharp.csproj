@@ -62,16 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DisplayInventory.cs" />
     <Compile Include="Assets\GenerateItemEnum.cs" />
-    <Compile Include="Assets\MyEnum.cs" />
-    <Compile Include="Assets\PickableItem.cs" />
     <Compile Include="Assets\Player\Player.cs" />
+    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\DisplayInventory.cs" />
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\InventoryObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Armor.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Food.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />
+    <Compile Include="Assets\Scriptable Objects\Items\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Potion.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Weapon.cs" />
     <Reference Include="Unity.Timeline.Editor">
