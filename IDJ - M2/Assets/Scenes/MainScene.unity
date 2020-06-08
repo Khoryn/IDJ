@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 206890784}
   - component: {fileID: 206890783}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908603842}
   m_Layer: 0
-  m_Name: Test
+  m_Name: SceneTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1124,11 +1124,11 @@ MonoBehaviour:
   inventoryPrefab: {fileID: 3721292937403180762, guid: c2234330700740e4eaa58460618708e8,
     type: 3}
   inventory: {fileID: 11400000, guid: 8a7dd1d0e07b93a47ababb3839184c47, type: 2}
-  X_SPACE_BETWEEN_ITEM: 110
-  NUMBER_OF_COLUMNS: 4
-  Y_SPACE_BETWEEN_ITEM: 110
-  X_START: -175
-  Y_START: 275
+  xSpaceBetweenItems: 110
+  columns: 4
+  ySpaceBetweenItems: 110
+  xStart: -170
+  yStart: 275
 --- !u!114 &1274754495
 MonoBehaviour:
   m_ObjectHideFlags: 0

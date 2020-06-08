@@ -7,11 +7,11 @@ public class DisplayInventory : MonoBehaviour
 {
     public GameObject inventoryPrefab;
     public InventoryObject inventory;
-    public int X_SPACE_BETWEEN_ITEM;
-    public int NUMBER_OF_COLUMNS;
-    public int Y_SPACE_BETWEEN_ITEM;
-    public int X_START;
-    public int Y_START;
+    public int xSpaceBetweenItems;
+    public int columns;
+    public int ySpaceBetweenItems;
+    public int xStart;
+    public int yStart;
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     void Start()
@@ -23,7 +23,6 @@ public class DisplayInventory : MonoBehaviour
     {
         UpdateDisplay();
     }
-
 
     public void CreateDisplay()
     {
@@ -62,6 +61,6 @@ public class DisplayInventory : MonoBehaviour
 
     public Vector3 GetPosition(int i)
     {
-        return new Vector3(X_START  +(X_SPACE_BETWEEN_ITEM * (i % NUMBER_OF_COLUMNS)), Y_START + ((-Y_SPACE_BETWEEN_ITEM * (i/NUMBER_OF_COLUMNS))),0f);
+        return new Vector3(xStart + (xSpaceBetweenItems * (i % columns)), yStart + ((-ySpaceBetweenItems * (i/ columns))),0f);
     }
 }

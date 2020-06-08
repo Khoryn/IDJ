@@ -12,12 +12,13 @@ public class InventoryObject : ScriptableObject//, ISerializationCallbackReceive
     public string savePath;
     public ItemDatabaseObject database;
     public Inventory container;
+    public GameObject inventoryCanvas;
 
     public void AddItem(Item _item, int _amount)
     {
         for (int i = 0; i < container.items.Count; i++)
         {
-            if (container.items[i].item == _item)
+            if (container.items[i].item.id == _item.id)
             {
                 container.items[i].AddAmount(_amount);
                 return;
@@ -68,6 +69,21 @@ public class InventoryObject : ScriptableObject//, ISerializationCallbackReceive
     public void Clear()
     {
         container = new Inventory();
+    }
+
+    public void ToggleInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inventoryCanvas.activeInHierarchy)
+            {
+                inventoryCanvas.SetActive(false);
+            }
+            else
+            {
+                inventoryCanvas.SetActive(true);
+            }
+        }
     }
 
     //public void OnAfterDeserialize()

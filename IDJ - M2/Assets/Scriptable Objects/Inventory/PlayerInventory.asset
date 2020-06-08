@@ -16,3 +16,4 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 85b53cc7a0787ec49b2e27a78c04a318, type: 2}
   container:
     items: []
+  inventoryCanvas: {fileID: 0}

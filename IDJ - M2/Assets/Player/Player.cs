@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
-
     private Vector3 mousePosition;
     private float moveSpeed = 2f;
 
@@ -14,9 +13,15 @@ public class Player : MonoBehaviour
         inventory.Load();
     }
 
+    private void Start()
+    {
+        inventory.inventoryCanvas = GameObject.Find("InventoryUI");
+    }
+
     private void Update()
     {
         FollowMousePosition();
+        inventory.ToggleInventory();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
