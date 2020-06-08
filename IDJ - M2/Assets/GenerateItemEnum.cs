@@ -7,7 +7,7 @@ public class GenerateItemEnum
     [MenuItem("Tools/GenerateEnum")]
     public static void Go()
     {
-        string enumName = "MyEnum";
+        string enumName = "EnumTest";
         string[] enumEntries = { "Armor", "Weapon", "Food" };
         string filePathAndName = "Assets/" + enumName + ".cs";
 

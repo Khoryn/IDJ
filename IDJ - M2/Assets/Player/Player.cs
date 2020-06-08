@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
     private Vector3 mousePosition;
-    private float moveSpeed = 2f;
 
     private void Awake()
     {
