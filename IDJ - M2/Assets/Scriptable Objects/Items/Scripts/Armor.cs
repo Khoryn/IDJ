@@ -8,6 +8,6 @@ public class Armor : ItemObject
     public int DefenseBonus { get; set; }
     private void Awake()
     {
-        type = ItemType.Armor;
+        type = ItemType.Helmet;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //public MouseItem mouseItem = new MouseItem();
+
     public InventoryObject inventory;
     private Vector3 mousePosition;
 
@@ -14,23 +16,25 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        inventory.inventoryCanvas = GameObject.Find("InventoryUI");
+        //inventory.inventoryCanvas = GameObject.Find("InventoryUI");
     }
 
     private void Update()
     {
         FollowMousePosition();
-        inventory.ToggleInventory();
+        //inventory.ToggleInventory();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PickableItem item = collision.GetComponent<PickableItem>();
-
-        if (item)
+        if (Input.GetMouseButtonDown(0))
         {
-            inventory.AddItem(new Item(item.item), 1);
-            Destroy(collision.gameObject);
+            if (item)
+            {
+                inventory.AddItem(new Item(item.item), 1);
+                Destroy(collision.gameObject);
+            }
         }
     }
 

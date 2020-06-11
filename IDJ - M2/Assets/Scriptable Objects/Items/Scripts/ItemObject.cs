@@ -7,7 +7,14 @@ public enum ItemType
     Food,
     Potion,
     Weapon,
-    Armor
+    Shield,
+    Helmet,
+    Shoulders,
+    Cloak,
+    Chest,
+    Gloves,
+    Boots,
+    Ring
 }
 
 public enum Attributes
@@ -40,6 +47,13 @@ public class Item
     public string Name;
     public int id;
     public ItemBuff[] buffs;
+
+    public Item()
+    {
+        Name = "";
+        id = -1;
+    }
+
     public Item(ItemObject item)
     {
         Name = item.name;

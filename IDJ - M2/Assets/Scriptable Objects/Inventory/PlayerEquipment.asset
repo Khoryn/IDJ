@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7184c6c217e3d8345b824a3a04f7c108, type: 3}
+  m_Name: PlayerEquipment
+  m_EditorClassIdentifier: 
+  savePath: 
+  database: {fileID: 11400000, guid: 85b53cc7a0787ec49b2e27a78c04a318, type: 2}
+  container:
+    items:
+    - allowedItems: 04000000
+      id: -1
+      item:
+        Name: 
+        id: -1
+        buffs: []
+      amount: 0
+    - allowedItems: 07000000
+      id: 0
+      item:
+        Name: Armor of the Damned
+        id: 0
+        buffs:
+        - attribute: 3
+          value: 10
+        - attribute: 0
+          value: 20
+      amount: 1
+    - allowedItems: 02000000
+      id: 2
+      item:
+        Name: Hammer of Wrath
+        id: 2
+        buffs:
+        - attribute: 2
+          value: 56
+        - attribute: 3
+          value: 100
+      amount: 1
+    - allowedItems: 0200000003000000
+      id: 6
+      item:
+        Name: Weapon of the Damned
+        id: 6
+        buffs:
+        - attribute: 2
+          value: 45
+        - attribute: 3
+          value: 67
+      amount: 1
+    - allowedItems: 09000000
+      id: -1
+      item:
+        Name: 
+        id: -1
+        buffs: []
+      amount: 0

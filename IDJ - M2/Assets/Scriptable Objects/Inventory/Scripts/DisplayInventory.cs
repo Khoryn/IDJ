@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class DisplayInventory : MonoBehaviour
 {
-    public MouseItem mouseItem = new MouseItem();
+    //public MouseItem mouseItem = new MouseItem();
 
     public GameObject inventoryPrefab;
     public InventoryObject inventory;
@@ -51,7 +51,7 @@ public class DisplayInventory : MonoBehaviour
     {
         foreach (KeyValuePair<GameObject, InventorySlot> _slot in itemsDisplayed)
         {
-            if (_slot.Value.id >= 0)
+            if (_slot.Value.item.id >= 0)
             {
                 _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.getItem[_slot.Value.item.id].sprite;
                 _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
@@ -99,10 +99,10 @@ public class DisplayInventory : MonoBehaviour
         rt.sizeDelta = new Vector2(67, 67);
         mouseObject.transform.SetParent(transform.parent);
 
-        if (itemsDisplayed[obj].id >= 0)
+        if (itemsDisplayed[obj].item.id >= 0)
         {
             Image image = mouseObject.AddComponent<Image>();
-            image.sprite = inventory.database.getItem[itemsDisplayed[obj].id].sprite;
+            image.sprite = inventory.database.getItem[itemsDisplayed[obj].item.id].sprite;
             image.raycastTarget = false;
         }
         mouseItem.obj = mouseObject;
@@ -113,7 +113,7 @@ public class DisplayInventory : MonoBehaviour
     {
         if (mouseItem.hoverObject)
         {
-            inventory.MoveItem(itemsDisplayed[obj], itemsDisplayed[mouseItem.hoverObject]);
+            inventory.SwapItems(itemsDisplayed[obj], itemsDisplayed[mouseItem.hoverObject]);
         }
         else
         {
@@ -139,10 +139,10 @@ public class DisplayInventory : MonoBehaviour
     }
 }
 
-public class MouseItem
-{
-    public GameObject obj;
-    public InventorySlot item;
-    public InventorySlot hoverItem;
-    public GameObject hoverObject;
-}
+//public class MouseItem
+//{
+//    public GameObject obj;
+//    public InventorySlot item;
+//    public InventorySlot hoverItem;
+//    public GameObject hoverObject;
+//}
