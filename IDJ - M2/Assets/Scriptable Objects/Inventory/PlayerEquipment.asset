@@ -18,31 +18,31 @@ MonoBehaviour:
     items:
     - allowedItems: 04000000
       item:
-        Name: 
-        id: -1
+        Name: Helmet of the Damned
+        id: 4
         buffs: []
-      amount: 0
+      amount: 1
     - allowedItems: 07000000
       item:
-        Name: 
-        id: -1
+        Name: Armor of the Damned
+        id: 0
         buffs: []
-      amount: 0
+      amount: 1
     - allowedItems: 02000000
       item:
-        Name: 
-        id: -1
+        Name: Axe
+        id: 1
         buffs: []
-      amount: 0
+      amount: 1
     - allowedItems: 0200000003000000
       item:
-        Name: 
-        id: -1
+        Name: Sword
+        id: 7
         buffs: []
-      amount: 0
+      amount: 1
     - allowedItems: 09000000
       item:
-        Name: 
-        id: -1
+        Name: Boots
+        id: 2
         buffs: []
-      amount: 0
+      amount: 1

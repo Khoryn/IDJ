@@ -13,23 +13,49 @@ public class InventoryObject : ScriptableObject
     public ItemDatabaseObject database;
     public Inventory container;
 
-    public void AddItem(Item _item, int _amount)
+    public bool AddItem(Item _item, int _amount)
     {
-        if (_item.buffs.Length > 0)
+        if (EmptySlotCount <= 0)
+        {
+            return false;
+        }
+        InventorySlot slot = FindInventoryOnInventory(_item);
+        if (!database.GetItem[_item.id].stackable || slot == null)
         {
             SetEmptySlot(_item, _amount);
-            return;
+            return true;
         }
+        slot.AddAmount(_amount);
+        return true;
+    }
+
+    public InventorySlot FindInventoryOnInventory(Item _item)
+    {
         for (int i = 0; i < container.items.Length; i++)
         {
             if (container.items[i].item.id == _item.id)
             {
-                container.items[i].AddAmount(_amount);
-                return;
+                return container.items[i];
             }
         }
-        SetEmptySlot(_item, _amount);
-        Debug.Log($"Added {_item.Name} to the inventory");
+        return null;
+    }
+
+
+    public int EmptySlotCount
+    {
+        get
+        {
+            int counter = 0;
+            for (int i = 0; i < container.items.Length; i++)
+            {
+                if (container.items[i].item.id <= -1)
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
     }
 
     public InventorySlot SetEmptySlot(Item _item, int _amount)

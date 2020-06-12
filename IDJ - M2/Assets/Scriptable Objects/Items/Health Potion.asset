@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59f3e84aeb59f3458e667832cb5b03e, type: 3}
   m_Name: Health Potion
   m_EditorClassIdentifier: 
-  id: 2
-  sprite: {fileID: 21300000, guid: 476e92035edc51449bd19d577ba6eb7a, type: 3}
+  sprite: {fileID: 21300000, guid: c3b3708e1f90186439634828155b566e, type: 3}
+  stackable: 1
   type: 1
   description: 'Health Potion
 
 '
+  data:
+    Name: 
+    id: 3
+    buffs: []
