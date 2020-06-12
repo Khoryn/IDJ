@@ -38,7 +38,7 @@ public class InventoryObject : ScriptableObject
         {
             if (container.items[i].item.id <= -1)
             {
-                container.items[i].UpdateSlot(_item.id, _item, _amount);
+                container.items[i].UpdateSlot(_item, _amount);
                 return container.items[i];
             }
         }
@@ -48,13 +48,12 @@ public class InventoryObject : ScriptableObject
 
     public void SwapItems(InventorySlot item1, InventorySlot item2)
     {
-        //if (item2.CanPlaceInSlot)
-        //{
-
-        //}
-        //InventorySlot temp = new InventorySlot(item2.id, item2.item, item2.amount);
-        //item2.UpdateSlot(item1.id, item1.item, item1.amount);
-        //item1.UpdateSlot(temp.id, temp.item, temp.amount);
+        if (item2.CanPlaceInSlot(item1.ItemObject) && item1.CanPlaceInSlot(item2.ItemObject))
+        {
+            InventorySlot temp = new InventorySlot(item2.item, item2.amount);
+            item2.UpdateSlot(item1.item, item1.amount);
+            item1.UpdateSlot(temp.item, temp.amount);
+        }
     }
 
     public void RemoveItem(Item _item)
@@ -63,7 +62,7 @@ public class InventoryObject : ScriptableObject
         {
             if (container.items[i].item == _item)
             {
-                container.items[i].UpdateSlot(-1, null, 0);
+                container.items[i].UpdateSlot(null, 0);
             }
         }
     }
@@ -88,7 +87,7 @@ public class InventoryObject : ScriptableObject
 
         for (int i = 0; i < container.items.Length; i++)
         {
-            container.items[i].UpdateSlot(newContainer.items[i].item.id, newContainer.items[i].item, newContainer.items[i].amount);
+            container.items[i].UpdateSlot(newContainer.items[i].item, newContainer.items[i].amount);
         }
 
         stream.Close();
@@ -127,7 +126,7 @@ public class Inventory
     {
         for (int i = 0; i < items.Length; i++)
         {
-            items[i].UpdateSlot(-1, new Item(), 0);
+            items[i].UpdateSlot(new Item(), 0);
         }
     }
 }
@@ -143,7 +142,7 @@ public class InventorySlot
     [Space(5)]
     public int amount;
 
-    public InventorySlot(int _id, Item _item, int _amount)
+    public InventorySlot(Item _item, int _amount)
     {
         item = _item;
         amount = _amount;
@@ -161,7 +160,7 @@ public class InventorySlot
         amount = 0;
     }
 
-    public void UpdateSlot(int _id, Item _item, int _amount)
+    public void UpdateSlot(Item _item, int _amount)
     {
         item = _item;
         amount = _amount;
@@ -172,9 +171,21 @@ public class InventorySlot
         amount += value;
     }
 
+    public ItemObject ItemObject
+    {
+        get
+        {
+            if (item.id >= 0)
+            {
+                return parent.inventory.database.GetItem[item.id];
+            }
+            return null;
+        }
+    }
+
     public bool CanPlaceInSlot(ItemObject _itemObject)
     {
-        if (allowedItems.Length <= 0 || _itemObject == null || _itemObject.data)
+        if (allowedItems.Length <= 0 || _itemObject == null || _itemObject.data.id < 0)
         {
             return true;
         }

@@ -17,47 +17,30 @@ MonoBehaviour:
   container:
     items:
     - allowedItems: 04000000
-      id: -1
       item:
         Name: 
         id: -1
         buffs: []
       amount: 0
     - allowedItems: 07000000
-      id: 0
       item:
-        Name: Armor of the Damned
-        id: 0
-        buffs:
-        - attribute: 3
-          value: 10
-        - attribute: 0
-          value: 20
-      amount: 1
+        Name: 
+        id: -1
+        buffs: []
+      amount: 0
     - allowedItems: 02000000
-      id: 2
       item:
-        Name: Hammer of Wrath
-        id: 2
-        buffs:
-        - attribute: 2
-          value: 56
-        - attribute: 3
-          value: 100
-      amount: 1
+        Name: 
+        id: -1
+        buffs: []
+      amount: 0
     - allowedItems: 0200000003000000
-      id: 6
       item:
-        Name: Weapon of the Damned
-        id: 6
-        buffs:
-        - attribute: 2
-          value: 45
-        - attribute: 3
-          value: 67
-      amount: 1
+        Name: 
+        id: -1
+        buffs: []
+      amount: 0
     - allowedItems: 09000000
-      id: -1
       item:
         Name: 
         id: -1

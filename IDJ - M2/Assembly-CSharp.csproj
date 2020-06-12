@@ -62,11 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DynamicInterface.cs" />
-    <Compile Include="Assets\EnumTest.cs" />
     <Compile Include="Assets\Player\Player.cs" />
-    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\DisplayInventory.cs" />
+    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\DynamicInterface.cs" />
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\InventoryObject.cs" />
+    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\StaticInterface.cs" />
+    <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\UserInterface.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Armor.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Food.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />
@@ -74,8 +74,6 @@
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\PickableItem.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Potion.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\Weapon.cs" />
-    <Compile Include="Assets\StaticInterface.cs" />
-    <Compile Include="Assets\UserInterface.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/bmcka/Desktop/IDJ/IDJ - M2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

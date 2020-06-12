@@ -6,20 +6,20 @@ using UnityEngine;
 public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public ItemObject[] items;
-    public Dictionary<int, ItemObject> getItem = new Dictionary<int, ItemObject>();
+    public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
 
     public void OnAfterDeserialize()
     {
-        getItem = new Dictionary<int, ItemObject>();
+        GetItem = new Dictionary<int, ItemObject>();
         for (int i = 0; i < items.Length; i++)
         {
-            items[i].id = i;
-            getItem.Add(i, items[i]);
+            items[i].data.id = i;
+            GetItem.Add(i, items[i]);
         }
     }
 
     public void OnBeforeSerialize()
     {
-        getItem = new Dictionary<int, ItemObject>();
+        GetItem = new Dictionary<int, ItemObject>();
     }
 }

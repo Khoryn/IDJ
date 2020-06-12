@@ -37,7 +37,7 @@ public abstract class UserInterface : MonoBehaviour
         {
             if (_slot.Value.item.id >= 0)
             {
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.getItem[_slot.Value.item.id].sprite;
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = _slot.Value.ItemObject.sprite;
                 _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
                 _slot.Key.GetComponentInChildren<Text>().text = _slot.Value.amount == 1 ? "" : _slot.Value.amount.ToString("n0");
             }
@@ -72,12 +72,12 @@ public abstract class UserInterface : MonoBehaviour
 
     protected void OnEnterInterface(GameObject obj)
     {
-        player.mouseItem.ui = null;
+        MouseData.interfaceMouseIsOver = obj.GetComponent<UserInterface>();
     }
 
     protected void OnExitInterface(GameObject obj)
     {
-        player.mouseItem.ui = obj.GetComponent<UserInterface>();
+        MouseData.interfaceMouseIsOver = null;
     }
 
     protected void OnDragStart(GameObject obj)
@@ -90,16 +90,14 @@ public abstract class UserInterface : MonoBehaviour
         if (slotsOnInterface[obj].item.id >= 0)
         {
             Image image = mouseObject.AddComponent<Image>();
-            image.sprite = inventory.database.getItem[slotsOnInterface[obj].item.id].sprite;
+            image.sprite = slotsOnInterface[obj].ItemObject.sprite;
             image.raycastTarget = false;
         }
-        player.mouseItem.obj = mouseObject;
-        player.mouseItem.item = slotsOnInterface[obj];
+        MouseData.tempItemBeingDragged = mouseObject;
     }
 
     protected void OnDragEnd(GameObject obj)
     {
-        // Destroy the temporary item
         Destroy(MouseData.tempItemBeingDragged);
 
         if (MouseData.interfaceMouseIsOver != null)
@@ -116,9 +114,9 @@ public abstract class UserInterface : MonoBehaviour
 
     protected void OnDrag(GameObject obj)
     {
-        if (player.mouseItem.obj != null)
+        if (MouseData.tempItemBeingDragged != null)
         {
-            player.mouseItem.obj.GetComponent<RectTransform>().position = Input.mousePosition;
+            MouseData.tempItemBeingDragged.GetComponent<RectTransform>().position = Input.mousePosition;
         }
     }
     #endregion

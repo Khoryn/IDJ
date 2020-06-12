@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 1141435370}
   - component: {fileID: 1141435369}
   - component: {fileID: 1141435368}
+  - component: {fileID: 1141435371}
   m_Layer: 5
   m_Name: EquipmentScreen
   m_TagString: Untagged
@@ -1402,6 +1403,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141435366}
   m_CullTransparentMesh: 0
+--- !u!114 &1141435371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141435366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1200062404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1588,7 @@ GameObject:
   - component: {fileID: 1274754496}
   - component: {fileID: 1274754495}
   - component: {fileID: 1274754494}
+  - component: {fileID: 1274754497}
   m_Layer: 5
   m_Name: InventoryScreen
   m_TagString: Untagged
@@ -1659,6 +1674,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274754492}
   m_CullTransparentMesh: 0
+--- !u!114 &1274754497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274754492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1369459724
 GameObject:
   m_ObjectHideFlags: 0
