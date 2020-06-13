@@ -25,7 +25,8 @@ public enum Attributes
     Strengh
 }
 
-public abstract class ItemObject : ScriptableObject
+[CreateAssetMenu(fileName = "New item", menuName ="Inventory System/Items/item")]
+public class ItemObject : ScriptableObject
 {
     public Sprite sprite;
     public bool stackable;

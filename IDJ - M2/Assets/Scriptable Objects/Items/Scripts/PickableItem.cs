@@ -14,7 +14,9 @@ public class PickableItem : MonoBehaviour, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize()
     {
+#if UNITY_EDITOR
         GetComponentInChildren<SpriteRenderer>().sprite = item.sprite;
         EditorUtility.SetDirty(GetComponentInChildren<SpriteRenderer>());
+#endif
     }
 }

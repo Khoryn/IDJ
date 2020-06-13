@@ -4,50 +4,59 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using System;
 
 public abstract class UserInterface : MonoBehaviour
 {
-    public Player player;
-
     public InventoryObject inventory;
 
     protected Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
     void Start()
     {
-        for (int i = 0; i < inventory.container.items.Length; i++)
+        for (int i = 0; i < inventory.GetSlots.Length; i++)
         {
-            inventory.container.items[i].parent = this;
+            inventory.GetSlots[i].parent = this;
+            inventory.GetSlots[i].onAfterUpdate += OnSlotUpdate;
         }
         CreateSlots();
         AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
         AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
     }
 
-    void Update()
+    private void OnSlotUpdate(InventorySlot _slot)
     {
-        UpdateSlots();
+        if (_slot.item.id >= 0)
+        {
+            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = _slot.ItemObject.sprite;
+            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+            _slot.slotDisplay.GetComponentInChildren<Text>().text = _slot.amount == 1 ? "" : _slot.amount.ToString("n0");
+        }
+        else
+        {
+            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+            _slot.slotDisplay.GetComponentInChildren<Text>().text = "";
+        }
     }
 
     public abstract void CreateSlots();
 
-    public void UpdateSlots()
+    public GameObject CreateTempItem(GameObject obj)
     {
-        foreach (KeyValuePair<GameObject, InventorySlot> _slot in slotsOnInterface)
+        GameObject tempItem = null;
+
+        if (slotsOnInterface[obj].item.id >= 0)
         {
-            if (_slot.Value.item.id >= 0)
-            {
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = _slot.Value.ItemObject.sprite;
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
-                _slot.Key.GetComponentInChildren<Text>().text = _slot.Value.amount == 1 ? "" : _slot.Value.amount.ToString("n0");
-            }
-            else
-            {
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
-                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
-                _slot.Key.GetComponentInChildren<Text>().text = "";
-            }
+            tempItem = new GameObject();
+            RectTransform rt = tempItem.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(67, 67);
+            tempItem.transform.SetParent(transform.parent);
+            Image image = tempItem.AddComponent<Image>();
+            image.sprite = slotsOnInterface[obj].ItemObject.sprite;
+            image.raycastTarget = false;
         }
+        return tempItem;
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
@@ -82,18 +91,7 @@ public abstract class UserInterface : MonoBehaviour
 
     protected void OnDragStart(GameObject obj)
     {
-        GameObject mouseObject = new GameObject();
-        RectTransform rt = mouseObject.AddComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(67, 67);
-        mouseObject.transform.SetParent(transform.parent);
-
-        if (slotsOnInterface[obj].item.id >= 0)
-        {
-            Image image = mouseObject.AddComponent<Image>();
-            image.sprite = slotsOnInterface[obj].ItemObject.sprite;
-            image.raycastTarget = false;
-        }
-        MouseData.tempItemBeingDragged = mouseObject;
+        MouseData.tempItemBeingDragged = CreateTempItem(obj);
     }
 
     protected void OnDragEnd(GameObject obj)
@@ -127,4 +125,27 @@ public static class MouseData
     public static UserInterface interfaceMouseIsOver;
     public static GameObject tempItemBeingDragged;
     public static GameObject slotHoveredOver;
+}
+
+
+public static class ExtensionMethods
+{
+    public static void UpdateSlotDisplay(this Dictionary<GameObject, InventorySlot> _slotsOnInterface)
+    {
+        foreach (KeyValuePair<GameObject, InventorySlot> _slot in _slotsOnInterface)
+        {
+            if (_slot.Value.item.id >= 0)
+            {
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = _slot.Value.ItemObject.sprite;
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+                _slot.Key.GetComponentInChildren<Text>().text = _slot.Value.amount == 1 ? "" : _slot.Value.amount.ToString("n0");
+            }
+            else
+            {
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+                _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+                _slot.Key.GetComponentInChildren<Text>().text = "";
+            }
+        }
+    }
 }

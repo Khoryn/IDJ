@@ -12,37 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7184c6c217e3d8345b824a3a04f7c108, type: 3}
   m_Name: PlayerEquipment
   m_EditorClassIdentifier: 
-  savePath: 
+  savePath: /inventory.save
   database: {fileID: 11400000, guid: 85b53cc7a0787ec49b2e27a78c04a318, type: 2}
   container:
-    items:
+    slots:
     - allowedItems: 04000000
       item:
-        Name: Helmet of the Damned
-        id: 4
+        Name: 
+        id: -1
         buffs: []
-      amount: 1
+      amount: 0
     - allowedItems: 07000000
       item:
-        Name: Armor of the Damned
-        id: 0
+        Name: 
+        id: -1
         buffs: []
-      amount: 1
+      amount: 0
     - allowedItems: 02000000
       item:
-        Name: Axe
-        id: 1
+        Name: 
+        id: -1
         buffs: []
-      amount: 1
+      amount: 0
     - allowedItems: 0200000003000000
       item:
-        Name: Sword
-        id: 7
+        Name: 
+        id: -1
         buffs: []
-      amount: 1
+      amount: 0
     - allowedItems: 09000000
       item:
-        Name: Boots
-        id: 2
+        Name: 
+        id: -1
         buffs: []
-      amount: 1
+      amount: 0
