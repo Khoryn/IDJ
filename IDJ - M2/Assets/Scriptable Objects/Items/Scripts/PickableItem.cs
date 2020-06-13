@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class PickableItem : MonoBehaviour, ISerializationCallbackReceiver
 {
+    [Header("Item")]
     public ItemObject item;
 
     public void OnAfterDeserialize()

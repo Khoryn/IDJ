@@ -4,17 +4,21 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Food,
-    Potion,
-    Weapon,
+    Sword,
+    Axe,
+    Wand,
+    Polearm,
     Shield,
     Helmet,
     Shoulders,
     Cloak,
     Chest,
     Gloves,
+    Waist,
     Boots,
-    Ring
+    Ring,
+    Food,
+    Potion
 }
 
 public enum Attributes
@@ -25,7 +29,7 @@ public enum Attributes
     Strengh
 }
 
-[CreateAssetMenu(fileName = "New item", menuName ="Inventory System/Items/item")]
+[CreateAssetMenu(fileName = "New item", menuName = "Inventory System/Items/item")]
 public class ItemObject : ScriptableObject
 {
     public Sprite sprite;
@@ -70,7 +74,7 @@ public class Item
 }
 
 [System.Serializable]
-public class ItemBuff
+public class ItemBuff : IModifier
 {
     public Attributes attribute;
     public int value;
@@ -78,5 +82,10 @@ public class ItemBuff
     public ItemBuff(int _value)
     {
         value = _value;
+    }
+
+    public void AddValue(ref int baseValue)
+    {
+        baseValue += value;
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class DynamicInterface : UserInterface
 {
+    [Header("Inventory Prefab")]
     public GameObject inventoryPrefab;
 
+    [Header("Inventory Options")]
     public int xStart;
     public int yStart;
     public int columns;

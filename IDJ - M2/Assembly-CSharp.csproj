@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\InventoryObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\StaticInterface.cs" />
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\UserInterface.cs" />
+    <Compile Include="Assets\Scriptable Objects\Items\Scripts\AttributeModifier.cs" />
+    <Compile Include="Assets\Scriptable Objects\Items\Scripts\IModifier.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\PickableItem.cs" />

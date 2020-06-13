@@ -8,6 +8,7 @@ using System;
 
 public abstract class UserInterface : MonoBehaviour
 {
+    [Header("Inventory")]
     public InventoryObject inventory;
 
     protected Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
@@ -24,19 +25,19 @@ public abstract class UserInterface : MonoBehaviour
         AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
     }
 
-    private void OnSlotUpdate(InventorySlot _slot)
+    private void OnSlotUpdate(InventorySlot slot)
     {
-        if (_slot.item.id >= 0)
+        if (slot.item.id >= 0)
         {
-            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = _slot.ItemObject.sprite;
-            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
-            _slot.slotDisplay.GetComponentInChildren<Text>().text = _slot.amount == 1 ? "" : _slot.amount.ToString("n0");
+            slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = slot.ItemObject.sprite;
+            slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+            slot.slotDisplay.GetComponentInChildren<Text>().text = slot.amount == 1 ? "" : slot.amount.ToString("n0");
         }
         else
         {
-            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
-            _slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
-            _slot.slotDisplay.GetComponentInChildren<Text>().text = "";
+            slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+            slot.slotDisplay.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
+            slot.slotDisplay.GetComponentInChildren<Text>().text = "";
         }
     }
 

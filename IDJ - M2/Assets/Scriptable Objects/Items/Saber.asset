@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 95f32c40f422b5540947209f62caac90, type: 3}
   stackable: 0
-  type: 2
+  type: 0
   description: 
   data:
     Name: 
-    id: 6
+    id: 7
     buffs: []

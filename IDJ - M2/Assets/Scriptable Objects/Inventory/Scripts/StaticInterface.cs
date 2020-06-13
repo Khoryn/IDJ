@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class StaticInterface : UserInterface
 {
+    [Header("Equipment Slots")]
     public GameObject[] slots;
 
     public override void CreateSlots()

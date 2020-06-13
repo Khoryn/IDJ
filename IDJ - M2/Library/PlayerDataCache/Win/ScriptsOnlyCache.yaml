@@ -207,7 +207,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: f499e02a37f9757fe2bd4f18cabfd349
+      Hash: eba507fc57ee87c53d4ffe27cdae987b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventoryObject
@@ -321,7 +321,7 @@ ScriptsOnlyBuild:
     className: ItemObject
   - hash:
       serializedVersion: 2
-      Hash: 6714e49fbf58820edac8b0847d7d8527
+      Hash: 9ee4c36a8bcac074994cbd16b981a456
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemDatabaseObject

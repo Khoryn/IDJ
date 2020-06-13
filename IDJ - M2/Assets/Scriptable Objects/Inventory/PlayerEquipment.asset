@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savePath: /inventory.save
   database: {fileID: 11400000, guid: 85b53cc7a0787ec49b2e27a78c04a318, type: 2}
+  type: 1
   container:
     slots:
     - allowedItems: 04000000
@@ -28,13 +29,13 @@ MonoBehaviour:
         id: -1
         buffs: []
       amount: 0
-    - allowedItems: 02000000
+    - allowedItems: 0000000001000000
       item:
         Name: 
         id: -1
         buffs: []
       amount: 0
-    - allowedItems: 0200000003000000
+    - allowedItems: 000000000100000004000000
       item:
         Name: 
         id: -1
@@ -46,3 +47,4 @@ MonoBehaviour:
         id: -1
         buffs: []
       amount: 0
+  inventoryCanvas: {fileID: 0}

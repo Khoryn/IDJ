@@ -9,32 +9,41 @@ using System.Runtime.Serialization;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
+    public enum InterfaceType
+    {
+        Inventory,
+        Equipment,
+        Chest
+    }
+
     public string savePath;
     public ItemDatabaseObject database;
+    public InterfaceType type;
     public Inventory container;
+    public Canvas inventoryCanvas;
     public InventorySlot[] GetSlots { get { return container.slots; } }
 
-    public bool AddItem(Item _item, int _amount)
+    public bool AddItem(Item item, int amount)
     {
         if (EmptySlotCount <= 0)
         {
             return false;
         }
-        InventorySlot slot = FindItemOnInventory(_item);
-        if (!database.ItemObjects[_item.id].stackable || slot == null)
+        InventorySlot slot = FindItemOnInventory(item);
+        if (!database.ItemObjects[item.id].stackable || slot == null)
         {
-            SetEmptySlot(_item, _amount);
+            SetEmptySlot(item, amount);
             return true;
         }
-        slot.AddAmount(_amount);
+        slot.AddAmount(amount);
         return true;
     }
 
-    public InventorySlot FindItemOnInventory(Item _item)
+    public InventorySlot FindItemOnInventory(Item item)
     {
         for (int i = 0; i < GetSlots.Length; i++)
         {
-            if (GetSlots[i].item.id == _item.id)
+            if (GetSlots[i].item.id == item.id)
             {
                 return GetSlots[i];
             }
@@ -58,13 +67,13 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    public InventorySlot SetEmptySlot(Item _item, int _amount)
+    public InventorySlot SetEmptySlot(Item item, int amount)
     {
         for (int i = 0; i < GetSlots.Length; i++)
         {
             if (GetSlots[i].item.id <= -1)
             {
-                GetSlots[i].UpdateSlot(_item, _amount);
+                GetSlots[i].UpdateSlot(item, amount);
                 return GetSlots[i];
             }
         }
@@ -115,6 +124,21 @@ public class InventoryObject : ScriptableObject
     public void Clear()
     {
         container.Clear();
+    }
+
+    public void ToggleInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inventoryCanvas.gameObject.activeInHierarchy)
+            {
+                inventoryCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                inventoryCanvas.gameObject.SetActive(true);
+            }
+        }
     }
 
     //public void ToggleInventory()

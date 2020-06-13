@@ -2482,6 +2482,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8a7dd1d0e07b93a47ababb3839184c47, type: 2}
   equipment: {fileID: 11400000, guid: a6b9043d5dc1339469a7ae12d9d9f92d, type: 2}
+  inventoryCanvas: {fileID: 1274754495}
+  equipmentCanvas: {fileID: 1141435369}
+  attributes:
+  - type: 0
+  - type: 1
+  - type: 2
+  - type: 3
 --- !u!212 &1812698618
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,22 +5,59 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [Header("Inventories")]
     public InventoryObject inventory;
     public InventoryObject equipment;
 
-    //public Text inventoryFullText;
-    //public float textFadeOutTime;
-    //private Color originalColor;
+    [Header("Canvas")]
+    public Image inventoryCanvas;
+    public Image equipmentCanvas;
 
-    private void Awake()
+    [Header("Attributes")]
+    public Attribute[] attributes;
+
+    private void Start()
     {
         inventory.Load();
         equipment.Load();
+
+        inventoryCanvas.gameObject.SetActive(false);
+        equipmentCanvas.gameObject.SetActive(false);
+
+        for (int i = 0; i < attributes.Length; i++)
+        {
+            attributes[i].SetParent(this);
+        }
+        for (int i = 0; i < equipment.GetSlots.Length; i++)
+        {
+            equipment.GetSlots[i].onBeforeUpdate += OnBeforeSlotUpdate;
+            equipment.GetSlots[i].onAfterUpdate += OnAfterSlotUpdate;
+        }
+    }
+
+    public void OnBeforeSlotUpdate(InventorySlot slot)
+    {
+        if (slot.ItemObject == null)
+        {
+            return;
+        }
+        Debug.Log("Before update");
+    }
+
+    public void OnAfterSlotUpdate(InventorySlot slot)
+    {
+        Debug.Log("After update");
     }
 
     private void Update()
     {
         FollowMousePosition();
+
+        #region UI Methods
+        ToggleEquipmentCanvas(equipmentCanvas);
+        ToggleInventoryCanvas(inventoryCanvas);
+        ToggleInventoryAndEquipmentCanvas(inventoryCanvas, equipmentCanvas);
+        #endregion
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,16 +74,21 @@ public class Player : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
             }
-        
         }
+    }
+
+    public void AttributeModified(Attribute attribute)
+    {
+        Debug.Log($"{attribute.type} has been updated! The current value is {attribute.value.ModifiedValue}");
     }
 
     private void OnApplicationQuit()
     {
         inventory.Save();
         equipment.Save();
-        inventory.container.Clear();
-        equipment.container.Clear();
+
+        inventory.Clear();
+        equipment.Clear();
     }
 
     private void FollowMousePosition()
@@ -56,19 +98,70 @@ public class Player : MonoBehaviour
         transform.position = mousePosition;
     }
 
-    //public void FadeOut()
-    //{
-    //    StartCoroutine(FadeOutRoutine());
-    //}
+    public void ToggleEquipmentCanvas(Image equipmentCanvas)
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (equipmentCanvas.gameObject.activeInHierarchy)
+            {
+                equipmentCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                equipmentCanvas.gameObject.SetActive(true);
+            }
+        }
+    }
 
-    //private IEnumerator FadeOutRoutine()
-    //{
-    //    for (float t = 0.01f; t < textFadeOutTime; t += Time.deltaTime)
-    //    {
-    //        inventoryFullText.color = Color.Lerp(originalColor, Color.clear, Mathf.Min(1, t / textFadeOutTime));
-    //        yield return null;
-    //    }
-    //    inventoryFullText.gameObject.SetActive(false);
-    //    inventoryFullText.color = originalColor;
-    //}
+    public void ToggleInventoryCanvas(Image inventoryCanvas)
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (inventoryCanvas.gameObject.activeInHierarchy)
+            {
+                inventoryCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                inventoryCanvas.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void ToggleInventoryAndEquipmentCanvas(Image inventoryCanvas, Image equipmentCanvas)
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if ((inventoryCanvas.gameObject.activeInHierarchy && equipmentCanvas.gameObject.activeInHierarchy) || (inventoryCanvas.gameObject.activeInHierarchy && !equipmentCanvas.gameObject.activeInHierarchy) && (!inventoryCanvas.gameObject.activeInHierarchy && equipmentCanvas.gameObject.activeInHierarchy))
+            {
+                inventoryCanvas.gameObject.SetActive(false);
+                equipmentCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                inventoryCanvas.gameObject.SetActive(true);
+                equipmentCanvas.gameObject.SetActive(true);
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public class Attribute
+{
+    [System.NonSerialized]
+    public Player parent;
+    public Attributes type;
+    public AttributeModifier value;
+
+    public void SetParent(Player player)
+    {
+        parent = player;
+        value = new AttributeModifier(AttributeModified);
+    }
+
+    public void AttributeModified()
+    {
+        parent.AttributeModified(this);
+    }
 }
